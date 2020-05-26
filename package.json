@@ -1,0 +1,18 @@
+{
+  "name": "parallax",
+  "version": "0.1.0",
+  "description": "Simple, flexible and responsive parallax",
+  "main": "index.js",
+  "scripts": {
+    "express": "node server.js"
+  },
+  "keywords": [
+    "parallax",
+    "responsive"
+  ],
+  "author": "OXAYAZA",
+  "license": "ISC",
+  "devDependencies": {
+    "zemez-express": "1.0.1"
+  }
+}

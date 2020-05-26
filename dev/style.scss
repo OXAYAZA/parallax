@@ -1,0 +1,32 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: monospace;
+	overflow-x: hidden;
+	background: #313233;
+	color: white;
+}
+
+.page {
+	min-height: 100vh;
+	padding: 50vh 0;
+}
+
+.section {
+	display: flex;
+}
+
+.parallax {
+	flex-grow: 1;
+	height: 80vh;
+}
+
+.parallax-layer {
+	&.transparent {
+		opacity: .5;
+	}
+}
