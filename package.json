@@ -4,15 +4,21 @@
   "description": "Simple, flexible and responsive parallax",
   "main": "index.js",
   "scripts": {
-    "express": "node server.js"
+    "express": "node server.js",
+    "build": "node node_modules/gulp/bin/gulp.js --color --gulpfile build.js"
   },
   "keywords": [
     "parallax",
     "responsive"
   ],
   "author": "OXAYAZA",
-  "license": "ISC",
+  "license": "CC BY-SA 4.0",
   "devDependencies": {
+    "@babel/core": "7.10.2",
+    "@babel/preset-env": "7.10.2",
+    "gulp-babel": "8.0.0",
+    "gulp-rename": "2.0.0",
+    "zemez-build": "1.0.3",
     "zemez-express": "1.0.1"
   }
 }

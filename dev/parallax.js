@@ -1,3 +1,14 @@
+/**
+ * @module       parallax
+ * @version      0.1.0
+ * @author       OXAYAZA {@link https://oxayaza.page.link/github}
+ * @license      CC BY-SA 4.0 {@link https://creativecommons.org/licenses/by-sa/4.0/}
+ * @see          {@link https://codepen.io/OXAYAZA/pen/RgNywY}
+ * @see          {@link https://github.com/OXAYAZA/parallax}
+ * @see          {@link https://oxayaza.page.link/linkedin}
+ * @description  Simple, flexible and responsive parallax.
+ */
+
 ( function () {
 	/**
 	 * Wrapper to eliminate json errors
@@ -15,15 +26,6 @@
 	}
 
 	/**
-	 * Определение тэга получаемого обьекта (для точного определения типа)
-	 * @param {*} data - любой обьект
-	 * @returns {string} - тэг обьекта
-	 */
-	function objectTag ( data ) {
-		return Object.prototype.toString.call( data ).slice( 8, -1 );
-	}
-
-	/**
 	 * Слияние объектов
 	 * @param {Object} source - исходный объект
 	 * @param {Object} merged - слияемый объект
@@ -31,7 +33,7 @@
 	 */
 	function merge( source, merged ) {
 		for ( let key in merged ) {
-			if ( objectTag( merged[ key ] ) === 'Object' ) {
+			if ( merged[ key ] instanceof Object && merged[ key ].constructor.name === 'Object' ) {
 				if ( typeof( source[ key ] ) !== 'object' ) source[ key ] = {};
 				source[ key ] = merge( source[ key ], merged[ key ] );
 			} else {
@@ -83,11 +85,6 @@
 		this.node.parallax = this;
 	}
 
-	// Изменение тэга Parallax
-	Object.defineProperty( Parallax.prototype, Symbol.toStringTag, {
-		get: function () { return 'Parallax'; }
-	});
-
 
 	/**
 	 * Слой паралакса.
@@ -120,7 +117,7 @@
 				node.style.height = height +'px';
 			},
 			offsetHandler: ( node, offset ) => {
-				node.style.transform = 'translate3d( 0, calc( -50% + '+ offset +'px ), 0 )';
+				node.style.top = ( this.rect.height/2 - this.height/2 + offset ) +'px';
 			}
 		});
 
@@ -179,7 +176,7 @@
 	};
 
 	/**
-	 * Метод для обновления высоты и смещения слоя слоя при ресайзе.
+	 * Метод для обновления высоты и смещения слоя при ресайзе.
 	 */
 	ParallaxLayer.prototype.resize = function() {
 		this.wh = window.innerHeight;
@@ -198,11 +195,6 @@
 			this.setOffset();
 		}
 	};
-
-	// Изменение тэга Parallax
-	Object.defineProperty( ParallaxLayer.prototype, Symbol.toStringTag, {
-		get: function () { return 'ParallaxLayer'; }
-	});
 
 
 	if ( !window.Parallax ) {
