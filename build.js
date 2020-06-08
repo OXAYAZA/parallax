@@ -32,7 +32,6 @@ action.minifyJs = function ( data ) {
 
 module.exports.default = task([
 	action.clean({ src: 'dist' }),
-	action.copy({ src: 'dev/parallax.scss', dest: 'dist' }),
 	action.sass({ src: 'dev/parallax.scss', dest: 'dist', sass: { outputStyle: 'compressed' } }),
 	action.minifyJs({ src: 'dev/parallax.js', dest: 'dist' }),
 	action.custom({ cb: () => {

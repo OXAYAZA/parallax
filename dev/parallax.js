@@ -92,7 +92,7 @@
 	 * @param {Element} params.node - элемент из которого будет сделан слой паралакса.
 	 * @param {Parallax} params.owner - экземпляр паралакса к которому относится слой.
 	 * @param {number} [params.coeff] - коеффициент скорости движенеия слоя по мере скрола страницы.
-	 * @param {boolean} [params.autosize] - автоматический подгон высоты слоя дла полного перекрытия родительского элемента при скроле страницы.
+	 * @param {boolean} [params.autosize] - автоматический подгон высоты слоя для полного перекрытия родительского элемента при скроле страницы.
 	 * @param {Function} [params.onReady] - функция обратного вызова выполняющаяся при готовности слоя.
 	 * @param {Function} [params.heightHandler] - функция для обработки значения высоты при подгоне размеров слоя, не вызывается если `autosize: false`.
 	 * @param {Function} [params.offsetHandler] - функция для обработки значения смещения слоя при скролле.
@@ -186,7 +186,7 @@
 	};
 
 	/**
-	 * Метод для обновления смещения слоя слоя при скролле.
+	 * Метод для обновления смещения слоя при скролле.
 	 */
 	ParallaxLayer.prototype.scroll = function() {
 		this.rect = this.owner.node.getBoundingClientRect();
