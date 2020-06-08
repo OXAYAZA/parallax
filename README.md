@@ -34,7 +34,7 @@ _По умолчанию: `data-parallax-layer`_
 #### `new ParallaxLayer( options );`
 Конструктор слоя паралакса.
 
-##### `options`
+#### `options`
 _Тип: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)_  
 _Обязательный_  
 Параметры слоя параллакса.
@@ -52,7 +52,9 @@ _Обязательный_
 ##### `coeff`
 _Тип: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)_  
 _По умолчанию: `0.1`_  
-Коеффициент скорости движенеия слоя по мере скрола страницы.
+Коеффициент скорости движенеия слоя по мере прокрутки страницы.  
+При значении `0` слой неподвижен относительно родителя.
+При значении `-1` поведение слоя похоже на `background-attachment: fixed;`, не рекомендуется его использовать из за небольших подергиваний слоя при прокрутке страницы.
 
 ##### `autosize`
 _Тип: [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)_  
